@@ -2,7 +2,7 @@
   .mapboxgl-ctrl-geocoder {
     @apply m-0 w-full max-w-full;
   }
-  
+
   .marker-after-polygon {
     border-color: transparent;
     border-top-color: #2c3b4f;
