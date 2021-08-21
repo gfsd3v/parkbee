@@ -1,10 +1,13 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  important: 'html',
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
-  variants: {
-    extend: {},
+  purge: {
+    content: [
+      './src/**/*.{js,jsx,ts,tsx}',
+      './node_modules/react-map-gl-geocoder/dist/mapbox-gl-geocoder.css',
+      './node_modules/mapbox-gl/dist/mapbox-gl.css',
+    ],
+    safelist: ['mapboxgl-ctrl-geocoder', 'mapboxgl-ctrl'],
   },
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
     themes: [
       {
@@ -33,9 +36,5 @@ module.exports = {
       },
       'dark',
     ],
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
   },
 }

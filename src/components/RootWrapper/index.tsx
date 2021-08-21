@@ -3,9 +3,8 @@ import { Provider } from 'react-redux'
 import store from '@/state/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
-import 'focus-visible'
 import '@fontsource/manrope/variable.css'
-import '@/styles/index.css'
+import '../../styles/index.css'
 
 export interface RootWrapperProps {
   /** Site content */
