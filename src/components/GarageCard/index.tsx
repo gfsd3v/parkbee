@@ -5,7 +5,7 @@ const GarageCard: React.FC = () => {
   return (
     <div className="card lg:card-side lg:max-w-6xl bordered bg-base-100">
       <figure>
-        <img src="https://picsum.photos/id/1005/400/250" className="max-h-44 lg:min-h-full" />
+        <img alt="garage" src="https://picsum.photos/id/1005/400/250" className="max-h-44 lg:min-h-full" />
       </figure>
       <div className="card-body">
         <div className="flex min-w-full justify-between	prose mb-4">

@@ -1,5 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+/* TODO
+ Find alternative for react-map-gl-geocoder with TS support
+*/
+// eslint-disable-next-line
 import Map from '@/components/Map'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'

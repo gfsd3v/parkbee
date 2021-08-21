@@ -1,5 +1,8 @@
+/* TODO
+ Find alternative for react-map-gl-geocoder with TS support
+*/
 import * as React from 'react'
-import MapGL, { FlyToInterpolator, Marker as DefaultMarker, Popup } from 'react-map-gl'
+import MapGL, { FlyToInterpolator, Marker as DefaultMarker } from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
 import Marker from '@/components/Marker'
 import { easeExp } from 'd3-ease'

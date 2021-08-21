@@ -2,7 +2,7 @@
 const path = require('path')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-exports.onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
+exports.onCreateWebpackConfig = ({ getConfig, actions, loaders, stage }) => {
   const existingConfig = getConfig()
 
   const rules = existingConfig.module.rules.map(rule => {
@@ -14,6 +14,23 @@ exports.onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
     }
     return rule
   })
+
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /(\\|\/)mapbox-gl\.js$/,
+            use: loaders.null(),
+          },
+          {
+            test: /(\\|\/)mapbox-gl-geocoder/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 
   actions.replaceWebpackConfig({
     ...existingConfig,

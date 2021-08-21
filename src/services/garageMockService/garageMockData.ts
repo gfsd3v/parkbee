@@ -38,12 +38,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -54,12 +56,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -106,12 +110,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -122,12 +128,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -174,12 +182,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -190,12 +200,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -242,12 +254,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -258,12 +272,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -310,12 +326,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -326,12 +344,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -378,12 +398,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -394,12 +416,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -446,12 +470,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -462,12 +488,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -514,12 +542,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -530,12 +560,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -582,12 +614,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -598,12 +632,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
@@ -650,12 +686,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/29e48488-62f6-4507-9c7a-2b3c4e920fee.jpg',
           },
         ],
         extension: '.jpg',
@@ -666,12 +704,14 @@ export const Garages = [
           {
             name: 'Small',
             size: '300x225',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/300x225/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
           {
             name: 'Large',
             size: '1200x900',
-            url: 'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
+            url:
+              'https://ddp49kz334y0n.cloudfront.net/9afdd073-1684-4d12-9189-3e79f5ed8854/1200x900/6192159d-0d32-44be-a183-306c7e8e22fb.jpg',
           },
         ],
         extension: '.jpg',
