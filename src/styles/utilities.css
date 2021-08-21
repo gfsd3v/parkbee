@@ -3,11 +3,7 @@
     scroll-behavior: smooth;
   }
 
-  .mapboxgl-ctrl-top-left {
-    @apply w-4/5 max-w-screen-md  absolute top-16 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-  }
-
-  .mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+  .mapboxgl-ctrl-geocoder {
     @apply m-0 w-full max-w-full;
   }
 }

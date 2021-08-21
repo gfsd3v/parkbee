@@ -4,10 +4,12 @@ import storage from 'redux-persist/lib/storage'
 import { ThunkAction } from 'redux-thunk'
 import uiReducer from '@/state/ui'
 import mapReducer from '@/state/map'
+import garagesReducer from '@/state/garages'
 
 const rootReducer = combineReducers({
   ui: uiReducer,
   map: mapReducer,
+  garages: garagesReducer,
 })
 
 const persistConfig = {

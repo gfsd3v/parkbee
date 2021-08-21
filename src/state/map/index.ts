@@ -4,6 +4,7 @@ import { ViewportProps } from 'react-map-gl'
 
 interface MapState {
   viewport: ViewportProps
+  country: string
 }
 
 const initialState: MapState = {
@@ -13,6 +14,7 @@ const initialState: MapState = {
     zoom: 15,
     transitionDuration: 3000,
   },
+  country: 'nl',
 }
 
 // Slice
