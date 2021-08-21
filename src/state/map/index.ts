@@ -9,9 +9,9 @@ interface MapState {
 
 const initialState: MapState = {
   viewport: {
-    latitude: 52.3589,
-    longitude: 4.8765,
-    zoom: 15,
+    latitude: 52.36737462059774,
+    longitude: 4.896632009004516,
+    zoom: 12.4,
     transitionDuration: 3000,
   },
   country: 'nl',

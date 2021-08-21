@@ -7,7 +7,7 @@ export interface LayoutProps extends React.HTMLProps<HTMLDivElement> {
 
 /** Component shares layout structure between pages. Pass common sections like header, footer and content container here and wrap page components with it */
 const Layout = ({ children }: LayoutProps) => {
-  return <div className="flex w-screen h-screen">{children}</div>
+  return <div className="w-screen h-screen overflow-hidden">{children}</div>
 }
 
 export default Layout

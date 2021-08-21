@@ -1,6 +1,7 @@
 import * as React from 'react'
-import MapGL, { FlyToInterpolator } from 'react-map-gl'
+import MapGL, { FlyToInterpolator, Marker as DefaultMarker, Popup } from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
+import Marker from '@/components/Marker'
 import { easeExp } from 'd3-ease'
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2ZzZDN2IiwiYSI6ImNrc2pwb3o2OTJmdmUyd3JvZGtoemsyYWsifQ.K_7NGnqAc-4XdiDK3fd7ow'
@@ -11,13 +12,24 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2ZzZDN2IiwiYSI6ImNrc2pwb3o2OTJmdmUyd3JvZGtoems
   we need to add/remove the transitionEasing and transitionInterpolator
   from the viewport obj that we use at MapGL/redux store
 */
-const Map = ({ children, viewportChange, onGarageSelect, viewport }) => {
+const Map = ({
+  children,
+  viewportChange,
+  viewport,
+  garages,
+  activeGarage,
+  onGarageSelect,
+  country,
+  onTransitionEnd,
+  onMapClick,
+}) => {
   const mapRef = React.useRef()
   const inputContainerRef = React.useRef()
   const viewportWithTransition = {
     ...viewport,
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeExp,
+    onTransitionEnd: onTransitionEnd,
     width: '100%',
     heigh: '100%',
   }
@@ -28,6 +40,21 @@ const Map = ({ children, viewportChange, onGarageSelect, viewport }) => {
     delete newViewportWithoutTransition.transitionEasing
     viewportChange(newViewportWithoutTransition)
   }, [])
+
+  const renderMarkers = React.useCallback(() => {
+    return garages.map((garage, index) => (
+      <DefaultMarker key={garage.garageId} longitude={garage.longitude} latitude={garage.latitude}>
+        <Marker
+          active={activeGarage?.garageId === garage.garageId}
+          index={index}
+          value={garage}
+          onSelect={onGarageSelect}
+        >
+          <p className="prose prose-sm">€{garage.basePrice}</p>
+        </Marker>
+      </DefaultMarker>
+    ))
+  }, [garages, activeGarage])
 
   return (
     <>
@@ -42,13 +69,13 @@ const Map = ({ children, viewportChange, onGarageSelect, viewport }) => {
         onViewportChange={handleViewportChange}
         height="100%"
         width="100%"
+        onClick={onMapClick}
         {...viewportWithTransition}
       >
         <Geocoder
           mapRef={mapRef}
           containerRef={inputContainerRef}
-          countries={'nl'}
-          zoom={14}
+          countries={country}
           clearAndBlurOnEsc
           clearOnBlur
           onViewportChange={handleViewportChange}
@@ -56,6 +83,7 @@ const Map = ({ children, viewportChange, onGarageSelect, viewport }) => {
           mapboxApiAccessToken={MAPBOX_TOKEN}
           placeholder="Where do you want to park?"
         />
+        {renderMarkers()}
         {children}
       </MapGL>
     </>

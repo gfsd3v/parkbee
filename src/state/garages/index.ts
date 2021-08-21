@@ -1,20 +1,21 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import GarageService from '@/services/garageMockService'
-
-import { IGarageAvailability } from '@/services/garageMockService/interfaces'
+import { IGarage } from '@/services/garageMockService/interfaces'
 import { RootState } from '@/state/store'
 
 interface GaragesState {
-  availables: IGarageAvailability[] | []
+  availables: IGarage[] | []
+  active: IGarage | null
 }
 
 const initialState: GaragesState = {
   availables: [],
+  active: null,
 }
 
 export const getAvailableGarages = createAsyncThunk('garages/getAvailableGarages', async (_, { dispatch }) => {
   try {
-    const res: IGarageAvailability[] = await GarageService.getAvailableGarages()
+    const res: IGarage[] = await GarageService.getAvailableGarages()
     dispatch(setAvailableGarages(res))
   } catch (e) {
     console.error(e)
@@ -30,6 +31,9 @@ const garagesSlice = createSlice({
     setAvailableGarages(state, { payload: availableGarages }) {
       state.availables = availableGarages
     },
+    setActiveGarage(state, { payload: garage }) {
+      state.active = garage
+    },
   },
 })
 
@@ -37,7 +41,7 @@ const garagesSlice = createSlice({
 export const garagesSelector = (state: RootState) => state.garages
 
 // Actions
-export const { setAvailableGarages } = garagesSlice.actions
+export const { setAvailableGarages, setActiveGarage } = garagesSlice.actions
 
 // Reducers
 export default garagesSlice.reducer

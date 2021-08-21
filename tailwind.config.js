@@ -1,5 +1,6 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  important: 'html',
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   variants: {
     extend: {},

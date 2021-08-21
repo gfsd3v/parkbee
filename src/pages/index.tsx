@@ -1,63 +1,59 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Map from '@/components/Map'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
+import GarageCard from '@/components/GarageCard'
 import { mapSelector, setViewport } from '@/state/map'
-import { useSelector, useDispatch } from 'react-redux'
-import { getAvailableGarages } from '@/state/garages'
+import { garagesSelector, getAvailableGarages, setActiveGarage } from '@/state/garages'
+import { IGarage } from '@/services/garageMockService/interfaces'
 
 const IndexPage = () => {
   const dispatch = useDispatch()
   const mapState = useSelector(mapSelector)
+  const garagesState = useSelector(garagesSelector)
+
+  React.useEffect(() => {
+    /*
+        Here I would set the getAvailableGarages method to use
+        the `mapState.viewport` values to search for garages only at the current location
+        and add thresholds using the `mapState.viewport` values to dispatch
+        this action when the user is navigating through the map
+    */
+    dispatch(getAvailableGarages())
+  }, [])
 
   const handleViewportChange = React.useCallback(newViewport => {
     dispatch(setViewport(newViewport))
   }, [])
 
-  React.useEffect(() => {
-    /*
-        Here I would set the getAvailableGarages method use
-        the `mapState` values to search for garages only at the current location
-    */
-    dispatch(getAvailableGarages())
-  }, [])
+  const handleGarageSelect = React.useCallback(
+    (garage: IGarage) => {
+      dispatch(setActiveGarage(garage))
+    },
+    [garagesState.active]
+  )
 
   return (
     <Layout>
       <Seo title="Parkbee" />
-      {mapState.viewport && (
-        <Map viewport={mapState.viewport} viewportChange={handleViewportChange}>
-          <div className="z-10 block w-screen h-screen">
-            <div className="flex items-center justify-center w-full h-full">
-              <label htmlFor="my-modal-2" className="btn btn-primary modal-button">
-                open modal
-              </label>
-              <input type="checkbox" id="my-modal-2" className="modal-toggle" />
-              <div className="modal">
-                <div className="modal-box transform">
-                  <p>
-                    Enim dolorem dolorum omnis atque necessitatibus. Consequatur aut adipisci qui iusto illo eaque.
-                    Consequatur repudiandae et. Nulla ea quasi eligendi. Saepe velit autem minima.
-                  </p>
-                  <div className="modal-action">
-                    <label htmlFor="my-modal-2" className="btn btn-primary">
-                      Accept
-                    </label>
-                    <label htmlFor="my-modal-2" className="btn">
-                      Close
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Map>
+      {mapState.viewport && garagesState.availables.length && (
+        <Map
+          onGarageSelect={handleGarageSelect}
+          viewport={mapState.viewport}
+          viewportChange={handleViewportChange}
+          garages={garagesState.availables}
+          activeGarage={garagesState.active}
+          country={mapState.country}
+          onMapClick={() => dispatch(setActiveGarage(null))}
+          onTransitionEnd={() => dispatch(getAvailableGarages())}
+        ></Map>
       )}
-      {/* <div className="z-10 bottom-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"> */}
-      {/*   <div> */}
-      {/*     <button className="btn btn-primary">New York City</button> */}
-      {/*   </div> */}
-      {/* </div> */}
+      <div className="absolute z-10 inset-x-0 bottom-0 ">
+        <div className="flex w-full justify-center p-4 md:p-14">
+          <GarageCard />
+        </div>
+      </div>
     </Layout>
   )
 }
