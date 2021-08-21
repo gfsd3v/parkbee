@@ -1,5 +1,6 @@
 module.exports = {
   purge: {
+    important: 'html',
     content: [
       './src/**/*.{js,jsx,ts,tsx}',
       './node_modules/react-map-gl-geocoder/dist/mapbox-gl-geocoder.css',

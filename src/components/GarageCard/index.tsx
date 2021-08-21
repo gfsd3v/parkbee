@@ -3,10 +3,14 @@ import ColoredBadge from '@/components/ColoredBadge'
 
 const GarageCard: React.FC = () => {
   return (
-    <div className="card lg:card-side lg:max-w-6xl bordered bg-base-100">
-      <figure>
-        <img alt="garage" src="https://picsum.photos/id/1005/400/250" className="max-h-44 lg:min-h-full" />
-      </figure>
+    <div className="card bordered bg-base-100 lg:card-side lg:max-w-6xl lg:h-full ">
+      <div className="w-full justify-center lg:w-auto lg:flex lg:h-auto lg:justify-start lg:overflow-hidden lg:max-w-4/5">
+        <img
+          alt="garage"
+          src="https://picsum.photos/id/1005/400/250"
+          className="w-full max-h-44 lg:min-h-full lg:max-h-full"
+        />
+      </div>
       <div className="card-body">
         <div className="flex min-w-full justify-between	prose mb-4">
           <h3 className="m-0">Ut nullam interdum iaculis in ut suscipit</h3>

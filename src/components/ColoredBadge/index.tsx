@@ -8,7 +8,7 @@ const ColoredBadge: React.FC<{ color: 'success' | 'warning' }> = ({ color, child
 
   return (
     <div className={wrapperClasses}>
-      <div className="font-medium py-1 px-4">{children}</div>
+      <div className="font-medium text-sm py-1 px-3">{children}</div>
     </div>
   )
 }
