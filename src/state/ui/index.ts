@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import store, { RootState, Thunk, Dispatch } from '@/state/store'
 
 export enum ThemeMode {
-  LIGHT = 'defaultTheme',
+  LIGHT = 'light',
   DARK = 'dark',
 }
 

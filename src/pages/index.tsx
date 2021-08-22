@@ -10,7 +10,7 @@ import Seo from '@/components/Seo'
 import GarageCard from '@/components/GarageCard'
 import { mapSelector, setViewport } from '@/state/map'
 import { garagesSelector, getAvailableGarages, setActiveGarage } from '@/state/garages'
-import { startParkingTransaction, parkingSelector } from '@/state/parking'
+import { startParkingTransaction, endParkingTransaction, resetRequestsStatus, parkingSelector } from '@/state/parking'
 import { showModal, closeModal } from '@/state/modal'
 import { IGarage } from '@/services/garageMockService/interfaces'
 
@@ -19,18 +19,23 @@ const IndexPage = () => {
   const mapState = useSelector(mapSelector)
   const garagesState = useSelector(garagesSelector)
   const parkingState = useSelector(parkingSelector)
-  const { startParkingStatus } = parkingState
+  const { startParkingStatus, endParkingStatus } = parkingState
 
   React.useEffect(() => {
     dispatch(getAvailableGarages())
   }, [])
 
   React.useEffect(() => {
-    if (startParkingStatus === 'succeeded') {
-      toast.info('Parking action has successfully started')
-    }
+    startParkingStatus === 'succeeded' && toast.info('Parking action has successfully started')
     startParkingStatus === 'failed' && toast.error('Error stating parking action')
+    setTimeout(() => dispatch(resetRequestsStatus()), 3000)
   }, [startParkingStatus])
+
+  React.useEffect(() => {
+    endParkingStatus === 'succeeded' && toast.info('Parking has successfully end, thank you for using ParkBee :)')
+    endParkingStatus === 'failed' && toast.error('Error stating parking action')
+    setTimeout(() => dispatch(resetRequestsStatus()), 3000)
+  }, [endParkingStatus])
 
   const handleViewportChange = React.useCallback(newViewport => {
     dispatch(setViewport(newViewport))
@@ -48,6 +53,7 @@ const IndexPage = () => {
       const modalInfo = {
         title: 'Start parking?',
         description: `Please confirm that you want to start an parking action at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
+        mainButtonText: 'park',
         onAccept: () => {
           if (!parkingState.active) {
             dispatch(startParkingTransaction(garage))
@@ -60,8 +66,22 @@ const IndexPage = () => {
       }
       dispatch(showModal(modalInfo))
     },
-    [garagesState.active]
+    [parkingState]
   )
+
+  const handleParkingEnd = React.useCallback(() => {
+    const modalInfo = {
+      title: 'End parking?',
+      description: `Please confirm that you want to finish an parking action.`,
+      mainButtonText: 'end parking',
+      mainButtonColor: 'error',
+      onAccept: () => {
+        dispatch(endParkingTransaction())
+        dispatch(closeModal())
+      },
+    }
+    dispatch(showModal(modalInfo))
+  }, [])
 
   return (
     <Layout>
@@ -86,13 +106,13 @@ const IndexPage = () => {
                 {garagesState.active && (
                   <GarageCard
                     activeParking={
-                      parkingState.active &&
-                      garagesState.active &&
-                      parkingState.active.garageId === garagesState.active.garageId
+                      parkingState.active && parkingState.active.garageId === garagesState.active.garageId
                         ? parkingState.active
                         : null
                     }
                     onStartParking={handleParkingStart}
+                    onEndParking={handleParkingEnd}
+                    loading={startParkingStatus === 'loading' || endParkingStatus === 'loading'}
                     garage={garagesState.active}
                   />
                 )}

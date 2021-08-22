@@ -1,4 +1,6 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { uiSelector } from '@/state/ui'
 
 const Marker: React.FC<{
   value: any
@@ -7,15 +9,17 @@ const Marker: React.FC<{
   active: boolean
   activeParking: boolean
 }> = ({ children, onSelect, value, index, active, activeParking }) => {
+  const uiState = useSelector(uiSelector)
+
   const getClassname = (element: string) => {
     switch (element) {
       case 'baloon':
         if (active) {
-          return 'transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8 text-white text-center cursor-pointer rounded bg-secondary'
+          return 'text-current transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8  text-center cursor-pointer rounded bg-secondary'
         } else if (activeParking) {
-          return 'transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8 text-white text-center cursor-pointer rounded bg-primary'
+          return 'text-current transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8  text-center cursor-pointer rounded bg-primary'
         }
-        return 'transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8 text-white text-center cursor-pointer rounded bg-base-content'
+        return 'text-current transition z-20 duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8 text-center cursor-pointer rounded bg-base-content'
       case 'polygon':
         if (active) {
           return 'active marker-after-polygon absolute border-solid left-1/2 bottom-0'

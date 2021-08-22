@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Modal from '@/components/Modal'
 
 export interface LayoutProps extends React.HTMLProps<HTMLDivElement> {

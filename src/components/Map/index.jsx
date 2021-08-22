@@ -55,7 +55,7 @@ const Map = ({
           value={garage}
           onSelect={onGarageSelect}
         >
-          <p className="prose prose-sm">
+          <p className="text-sm">
             {activeParking && activeParking.garageId === garage.garageId ? 'P' : `€${garage.basePrice}`}
           </p>
         </Marker>

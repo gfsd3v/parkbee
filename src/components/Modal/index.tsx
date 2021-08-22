@@ -12,9 +12,9 @@ const Modal: React.FC = () => {
     <>
       {modalState.modal && (
         <div className="modal modal-open">
-          <div className="modal-box transform prose">
+          <div className="modal-box transform">
             <h2 className="text-center">{modalState.modal.title}</h2>
-            <p className="text-neutral">{modalState.modal.description}</p>
+            <p className="text-neutral text-center">{modalState.modal.description}</p>
             <div className="modal-action">
               <button className="btn" onClick={() => dispatch(closeModal())}>
                 Close

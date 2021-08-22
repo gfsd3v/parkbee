@@ -71,10 +71,10 @@
     "react-map-gl": "^6.1.16",
     "react-map-gl-geocoder": "^2.2.0",
     "react-redux": "^7.2.4",
-    "react-timer-hook": "^3.0.4",
     "react-toastify": "^7.0.4",
     "redux-persist": "^6.0.0",
-    "tailwindcss": "2.1.1"
+    "tailwindcss": "2.1.1",
+    "theme-change": "^2.0.2"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",

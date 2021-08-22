@@ -24,7 +24,12 @@ const useTimer = (initialState = 0) => {
     setTimerOn(true)
   }
 
-  return { timer, handleStart }
+  const resetTimer = () => {
+    setTimerOn(false)
+    setTimer(0)
+  }
+
+  return { timer, handleStart, resetTimer }
 }
 
 export default useTimer
