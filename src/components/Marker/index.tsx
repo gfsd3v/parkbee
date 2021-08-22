@@ -22,7 +22,9 @@ const Marker: React.FC<{ value: any; onSelect: React.Dispatch<any>; index: numbe
         }}
         role="button"
         tabIndex={index}
-        className={`w-8 text-white text-center cursor-pointer rounded ${active ? 'bg-secondary' : 'bg-base-content'}`}
+        className={`transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-8 text-white text-center cursor-pointer rounded ${
+          active ? 'bg-secondary' : 'bg-base-content'
+        }`}
       >
         {children}
       </div>

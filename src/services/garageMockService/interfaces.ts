@@ -2,6 +2,7 @@ export interface IGarageDoor {
   doorId: string
   doorType?: string
   description?: string
+  streetAddress?: string
 }
 
 export interface IGaragePhotoUrl {

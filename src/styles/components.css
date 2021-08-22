@@ -2,6 +2,17 @@
   .mapboxgl-ctrl-geocoder {
     @apply m-0 w-full max-w-full;
   }
+
+  .card-actions {
+    align-items: flex-end;
+  }
+
+  .collapse-title,
+  .collapse > input[type='checkbox'] {
+    @apply p-0 my-4;
+    min-height: unset;
+  }
+
   .marker-after-polygon {
     border-color: transparent;
     border-top-color: #2c3b4f;

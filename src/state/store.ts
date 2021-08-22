@@ -5,11 +5,13 @@ import { ThunkAction } from 'redux-thunk'
 import uiReducer from '@/state/ui'
 import mapReducer from '@/state/map'
 import garagesReducer from '@/state/garages'
+import modalReducer from '@/state/modal'
 
 const rootReducer = combineReducers({
   ui: uiReducer,
   map: mapReducer,
   garages: garagesReducer,
+  modal: modalReducer,
 })
 
 const persistConfig = {
@@ -25,7 +27,7 @@ const store = configureStore({
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: ['map/showModal', FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
 })

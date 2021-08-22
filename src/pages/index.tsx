@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-/* TODO
- Find alternative for react-map-gl-geocoder with TS support
-*/
+// TODO
+// Find alternative for react-map-gl-geocoder with TS support
 // eslint-disable-next-line
 import Map from '@/components/Map'
 import Layout from '@/components/Layout'
@@ -10,6 +9,7 @@ import Seo from '@/components/Seo'
 import GarageCard from '@/components/GarageCard'
 import { mapSelector, setViewport } from '@/state/map'
 import { garagesSelector, getAvailableGarages, setActiveGarage } from '@/state/garages'
+import { showModal } from '@/state/modal'
 import { IGarage } from '@/services/garageMockService/interfaces'
 
 const IndexPage = () => {
@@ -38,6 +38,18 @@ const IndexPage = () => {
     [garagesState.active]
   )
 
+  const handleParkingStart = React.useCallback(
+    (garage: IGarage) => {
+      const modalInfo = {
+        title: 'Start parking?',
+        description: `Please confirm that you want to park at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
+        onAccept: () => console.log('confirmed'),
+      }
+      dispatch(showModal(modalInfo))
+    },
+    [garagesState.active]
+  )
+
   return (
     <Layout>
       <Seo title="Parkbee" />
@@ -51,11 +63,15 @@ const IndexPage = () => {
           country={mapState.country}
           onMapClick={() => dispatch(setActiveGarage(null))}
           onTransitionEnd={() => dispatch(getAvailableGarages())}
-        ></Map>
+        >
+          <div className="block w-screen h-screen">
+            <div className="flex items-center justify-center w-full h-full"></div>
+          </div>
+        </Map>
       )}
       <div className="absolute z-10 inset-x-0 bottom-0 ">
         <div className="flex w-full justify-center p-4 md:p-14">
-          <GarageCard />
+          {garagesState.active && <GarageCard onStartParking={handleParkingStart} garage={garagesState.active} />}
         </div>
       </div>
     </Layout>
