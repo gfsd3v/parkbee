@@ -21,6 +21,7 @@ const Map = ({
   viewport,
   garages,
   activeGarage,
+  activeParking,
   onGarageSelect,
   country,
   onTransitionEnd,
@@ -49,11 +50,14 @@ const Map = ({
       <DefaultMarker key={garage.garageId} longitude={garage.longitude} latitude={garage.latitude}>
         <Marker
           active={activeGarage?.garageId === garage.garageId}
+          activeParking={activeParking && activeParking.garageId === garage.garageId}
           index={index}
           value={garage}
           onSelect={onGarageSelect}
         >
-          <p className="prose prose-sm">€{garage.basePrice}</p>
+          <p className="prose prose-sm">
+            {activeParking && activeParking.garageId === garage.garageId ? 'P' : `€${garage.basePrice}`}
+          </p>
         </Marker>
       </DefaultMarker>
     ))

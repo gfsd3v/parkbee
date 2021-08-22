@@ -3,6 +3,10 @@
     @apply m-0 w-full max-w-full;
   }
 
+  .Toastify__toast-container {
+    z-index: 20;
+  }
+
   .card-actions {
     align-items: flex-end;
   }
@@ -16,9 +20,16 @@
   .marker-after-polygon {
     border-color: transparent;
     border-top-color: #2c3b4f;
+    border-width: 12px;
+    margin-left: -11.6px;
+    margin-bottom: -1.275rem;
   }
 
   .marker-after-polygon.active {
     border-top-color: #f06aa9;
+  }
+
+  .marker-after-polygon.active-parking {
+    border-top-color: #8261f0;
   }
 }

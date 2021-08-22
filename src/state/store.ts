@@ -6,12 +6,14 @@ import uiReducer from '@/state/ui'
 import mapReducer from '@/state/map'
 import garagesReducer from '@/state/garages'
 import modalReducer from '@/state/modal'
+import parkingReducer from '@/state/parking'
 
 const rootReducer = combineReducers({
   ui: uiReducer,
   map: mapReducer,
   garages: garagesReducer,
   modal: modalReducer,
+  parking: parkingReducer,
 })
 
 const persistConfig = {
@@ -28,6 +30,7 @@ const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['map/showModal', FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoreState: true,
       },
     }),
 })
