@@ -12,14 +12,15 @@ const Modal: React.FC = () => {
     <>
       {modalState.modal && (
         <div className="modal modal-open">
-          <div className="modal-box transform">
-            <p>{modalState.modal.description}</p>
+          <div className="modal-box transform prose">
+            <h2 className="text-center">{modalState.modal.title}</h2>
+            <p className="text-neutral">{modalState.modal.description}</p>
             <div className="modal-action">
-              <button className={getBtnClass(modalState.modal.mainButtonColor)} onClick={modalState.modal.onAccept}>
-                {modalState.modal.mainButtonText || 'Ok'}
-              </button>
               <button className="btn" onClick={() => dispatch(closeModal())}>
                 Close
+              </button>
+              <button className={getBtnClass(modalState.modal.mainButtonColor)} onClick={modalState.modal.onAccept}>
+                {modalState.modal.mainButtonText || 'Ok'}
               </button>
             </div>
           </div>

@@ -42,7 +42,7 @@ const IndexPage = () => {
     (garage: IGarage) => {
       const modalInfo = {
         title: 'Start parking?',
-        description: `Please confirm that you want to park at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
+        description: `Please confirm that you want to start an parking action at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
         onAccept: () => console.log('confirmed'),
       }
       dispatch(showModal(modalInfo))
@@ -61,19 +61,20 @@ const IndexPage = () => {
           garages={garagesState.availables}
           activeGarage={garagesState.active}
           country={mapState.country}
-          onMapClick={() => dispatch(setActiveGarage(null))}
+          onMapClick={(event: React.MouseEvent<HTMLElement>) =>
+            (event.target as Element).id === 'mapWrapper' && dispatch(setActiveGarage(null))
+          }
           onTransitionEnd={() => dispatch(getAvailableGarages())}
         >
           <div className="block w-screen h-screen">
-            <div className="flex items-center justify-center w-full h-full"></div>
+            <div id="mapWrapper" className="flex items-end justify-center w-full h-full">
+              <div className="flex w-full justify-center p-4 md:p-14">
+                {garagesState.active && <GarageCard onStartParking={handleParkingStart} garage={garagesState.active} />}
+              </div>
+            </div>
           </div>
         </Map>
       )}
-      <div className="absolute z-10 inset-x-0 bottom-0 ">
-        <div className="flex w-full justify-center p-4 md:p-14">
-          {garagesState.active && <GarageCard onStartParking={handleParkingStart} garage={garagesState.active} />}
-        </div>
-      </div>
     </Layout>
   )
 }
