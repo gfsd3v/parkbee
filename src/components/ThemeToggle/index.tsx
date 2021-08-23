@@ -30,7 +30,7 @@ const Switch = styled.div<ToggleProps>`
 const Toggle: React.FC<ToggleProps> = ({ currentTheme, ...props }) => {
   return (
     <>
-      <ToggleContainer data-act-class="shadow-outline" id="toggle-test" className="customm-toggle" {...props}>
+      <ToggleContainer style={{ outline: 'none' }} id="toggle-test" className="customm-toggle" {...props}>
         <Switch currentTheme={currentTheme} />
       </ToggleContainer>
     </>

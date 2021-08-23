@@ -41,7 +41,7 @@ const IndexPage = () => {
   }, [startParkingStatus])
 
   React.useEffect(() => {
-    endParkingStatus === 'succeeded' && toast.info('Parking has successfully end, thank you for using ParkBee :)')
+    endParkingStatus === 'succeeded' && toast.info('Parking has successfully ended, thank you for using ParkBee :)')
     endParkingStatus === 'failed' && toast.error('Error stating parking action')
     setTimeout(() => dispatch(resetRequestsStatus()), 3000)
   }, [endParkingStatus])

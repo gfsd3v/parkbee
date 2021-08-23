@@ -1,67 +1,71 @@
 @layer components {
-  .mapboxgl-ctrl-geocoder {
-    @apply m-0 w-full max-w-full;
-  }
-
-  .card-actions {
-    align-items: flex-end;
-  }
-
-  .customized-marker {
-    text-align: center;
-    white-space: nowrap;
-    font-size: 13px;
-    padding: 9px 10px 7px 10px;
-    border-radius: 10px;
-    width: auto;
-    height: auto;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.35);
-    background: theme('colors.secondary');
-    z-index: 1;
-    position: absolute;
-    cursor: pointer;
-  }
-
-  .modal-action {
-    @apply justify-center;
-  }
-  .customized-marker::after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 7.5px;
-    height: 7.5px;
-    margin-top: -4px;
-    background: theme('colors.secondary');
-    transform: rotate(45deg);
-  }
-
-  .customized-marker.active-parking,
-  .customized-marker.active-parking::after {
-    background: theme('colors.success');
-  }
-
-  .customized-marker.active,
-  .customized-marker.active::after {
-    background: theme('colors.primary');
-  }
-
-  .collapse-title,
-  .collapse > input[type='checkbox'] {
-    @apply p-0 my-4;
-    min-height: unset;
-  }
-
-  #toggle-test {
-    border: 0.125em solid theme('colors.[base-200]');
-    background: theme('colors.[base-content]');
-  }
-
-  #toggle-test > div {
-    background-color: theme('colors.[base-200]');
-  }
+	.mapboxgl-ctrl-geocoder {
+		@apply m-0 w-full max-w-full;
+	}
+	.card-actions {
+		align-items: flex-end;
+	}
+	.customized-marker {
+		text-align: center;
+		white-space: nowrap;
+		font-size: 13px;
+		padding: 9px 10px 7px 10px;
+		border-radius: 10px;
+		width: auto;
+		height: auto;
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.35);
+		background: theme('colors.secondary');
+		z-index: 1;
+		position: absolute;
+		cursor: pointer;
+	}
+	.modal-action {
+		@apply justify-center;
+	}
+	.customized-marker::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 100%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 7.5px;
+		height: 7.5px;
+		margin-top: -4px;
+		background: theme('colors.secondary');
+		transform: rotate(45deg);
+	}
+	.customized-marker.active-parking,
+	.customized-marker.active-parking::after {
+		background: theme('colors.success');
+	}
+	.customized-marker.active,
+	.customized-marker.active::after {
+		background: theme('colors.primary');
+	}
+	.collapse-title,
+	.collapse>input[type='checkbox'] {
+		@apply p-0 my-4;
+		min-height: unset;
+	}
+	#toggle-test {
+		border: 0.125em solid theme('colors.[base-content]');
+		background: theme('colors.[base-content]');
+	}
+	#toggle-test>div {
+		background-color: theme('colors.[base-200]');
+	}
+	.Toastify__toast--info {
+		background: theme('colors.primary');
+	}
+	.Toastify__toast--success {
+		background: theme('colors.success');
+	}
+	.Toastify__toast--warning {
+		background: theme('colors.warning'); 
+	}
+	.Toastify__toast--error {
+		background: theme('colors.warning');
+	}
 }

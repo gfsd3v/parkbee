@@ -22,7 +22,7 @@ const Loader = () => {
         <span></span>
         <span></span>
       </div>
-      <h1>Loading...</h1>
+      <h1 className="jetpack-subtitle">Loading...</h1>
     </div>
   )
 }
