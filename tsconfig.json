@@ -14,5 +14,5 @@
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["node_modules", "public", "src/components/Map"]
+  "exclude": ["node_modules", "public", "cypress", "src/components/Map"]
 }
