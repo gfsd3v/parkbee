@@ -7,6 +7,7 @@ import { ToastContainer, Flip } from 'react-toastify'
 import '@fontsource/manrope/variable.css'
 import 'react-toastify/dist/ReactToastify.css'
 import '../../styles/index.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 export interface RootWrapperProps {
   /** Site content */

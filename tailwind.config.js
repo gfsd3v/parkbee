@@ -6,7 +6,7 @@ module.exports = {
       './node_modules/react-map-gl-geocoder/dist/mapbox-gl-geocoder.css',
       './node_modules/mapbox-gl/dist/mapbox-gl.css',
     ],
-    safelist: ['mapboxgl-ctrl-geocoder', 'mapboxgl-ctrl'],
+    safelist: ['mapboxgl-ctrl-geocoder', 'mapbox-gl', 'mapboxgl-ctrl'],
   },
   plugins: [require('daisyui')],
   daisyui: {

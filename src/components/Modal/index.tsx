@@ -7,7 +7,7 @@ const Modal: React.FC = () => {
   const dispatch = useDispatch()
   const modalState = useSelector(modalSelector)
 
-  const getBtnClass = (color: string | undefined): string => (color ? `btn w-32 btn-${color}` : `btn w-28 btn-primary`)
+  const getBtnClass = (color: string | undefined): string => (color ? `btn w-34 btn-${color}` : `btn w-28 btn-primary`)
 
   const handleClick = () => {
     // Functions are not saved at the redux store after reloading the page

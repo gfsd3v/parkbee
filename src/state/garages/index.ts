@@ -34,6 +34,9 @@ const garagesSlice = createSlice({
     setActiveGarage(state, { payload: garage }) {
       state.active = garage
     },
+    deactiveGarage(state) {
+      state.active = null
+    },
   },
 })
 
@@ -41,7 +44,7 @@ const garagesSlice = createSlice({
 export const garagesSelector = (state: RootState) => state.garages
 
 // Actions
-export const { setAvailableGarages, setActiveGarage } = garagesSlice.actions
+export const { setAvailableGarages, setActiveGarage, deactiveGarage } = garagesSlice.actions
 
 // Reducers
 export default garagesSlice.reducer

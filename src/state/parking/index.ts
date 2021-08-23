@@ -2,36 +2,45 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import ParkingService from '@/services/parkingMockService'
 import { IGarage } from '@/services/garageMockService/interfaces'
 import { RootState } from '@/state/store'
+import { deactiveGarage } from '@/state/garages'
 import dayjs from 'dayjs'
 
 export interface IParking {
-  garageId: string
+  garage: IGarage
   transactionId: string
   startetedAt: Date
+}
+
+export interface ILastParkingData {
+  garage: IGarage
+  transactionId: string
+  price: number
 }
 
 interface ParkingState {
   active: IParking | null
   startParkingStatus: 'idle' | 'loading' | 'succeeded' | 'failed'
   endParkingStatus: 'idle' | 'loading' | 'succeeded' | 'failed'
-  lastParkingPrice: number | null
+  lastParkingData: ILastParkingData | null
 }
 
 const initialState: ParkingState = {
   active: null,
   startParkingStatus: 'idle',
   endParkingStatus: 'idle',
-  lastParkingPrice: null,
+  lastParkingData: null,
 }
 
 export const startParkingTransaction = createAsyncThunk(
   'parking/startParking',
   async (garage: IGarage, { dispatch }) => {
     try {
+      // TODO
+      // Add support to door selection
       const payload = { garageId: garage.garageId, doorId: garage.doors[0].doorId }
       const currentDate = dayjs()
       const transactionId: string = await ParkingService.startParkingTransaction(payload)
-      dispatch(setActiveParking({ garageId: garage.garageId, transactionId: transactionId, startetedAt: currentDate }))
+      dispatch(setActiveParking({ garage: garage, transactionId: transactionId, startetedAt: currentDate }))
     } catch (e) {
       console.error(e)
       throw e
@@ -44,9 +53,10 @@ export const endParkingTransaction = createAsyncThunk('parking/endParking', asyn
   try {
     if (!parking.active?.transactionId)
       throw 'No active parking was found at the Parking store, something is very wrong'
-    const payload = parking.active.transactionId
-    const parkingPrice = await ParkingService.endParkingTransaction(payload)
-    dispatch(endActiveParking(parkingPrice))
+    const { garage, transactionId } = parking.active
+    const price = await ParkingService.endParkingTransaction(transactionId)
+    dispatch(deactiveGarage())
+    dispatch(endActiveParking({ garage, transactionId, price }))
   } catch (e) {
     console.error(e)
     throw e
@@ -61,13 +71,16 @@ const parkingSlice = createSlice({
     setActiveParking(state, { payload: parkingData }) {
       state.active = parkingData
     },
-    endActiveParking(state, { payload: parkingPrice }) {
+    endActiveParking(state, { payload: lastParkingData }) {
+      state.lastParkingData = lastParkingData
       state.active = null
-      state.lastParkingPrice = parkingPrice
     },
     resetRequestsStatus(state) {
       state.startParkingStatus = 'idle'
       state.endParkingStatus = 'idle'
+    },
+    resetLastParkingData(state) {
+      state.lastParkingData = null
     },
   },
   extraReducers: builder => {
@@ -96,7 +109,7 @@ const parkingSlice = createSlice({
 export const parkingSelector = (state: RootState) => state.parking
 
 // Actions
-export const { setActiveParking, endActiveParking, resetRequestsStatus } = parkingSlice.actions
+export const { setActiveParking, endActiveParking, resetRequestsStatus, resetLastParkingData } = parkingSlice.actions
 
 // Reducers
 export default parkingSlice.reducer

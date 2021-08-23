@@ -26,10 +26,11 @@ const Map = ({
   viewport,
   garages,
   activeGarage,
-  activeParking,
+  activeParkingGarageId,
   onGarageSelect,
   country,
   onTransitionEnd,
+  onMapLoad,
   onMapClick,
 }) => {
   const { themeMode } = useSelector(uiSelector)
@@ -40,8 +41,6 @@ const Map = ({
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeExp,
     onTransitionEnd: onTransitionEnd,
-    width: '100%',
-    heigh: '100%',
   }
 
   const handleViewportChange = React.useCallback(newViewportWithTransition => {
@@ -53,17 +52,21 @@ const Map = ({
 
   const renderMarkers = React.useCallback(() => {
     return garages.map((garage, index) => (
-      <DefaultMarker key={garage.garageId} longitude={garage.longitude} latitude={garage.latitude}>
+      <DefaultMarker
+        offsetLeft={-36 / 2}
+        offsetTop={-36}
+        key={garage.garageId}
+        longitude={garage.longitude}
+        latitude={garage.latitude}
+      >
         <Marker
           active={activeGarage?.garageId === garage.garageId}
-          activeParking={activeParking && activeParking.garageId === garage.garageId}
+          activeParking={activeParkingGarageId === garage.garageId}
           index={index}
           value={garage}
           onSelect={onGarageSelect}
         >
-          <p className="text-sm">
-            {activeParking && activeParking.garageId === garage.garageId ? 'P' : `€${garage.basePrice}`}
-          </p>
+          <p className="text-sm">{activeParkingGarageId === garage.garageId ? 'P' : `€${garage.basePrice}`}</p>
         </Marker>
       </DefaultMarker>
     ))
@@ -76,14 +79,15 @@ const Map = ({
         className="w-4/5 max-w-screen-md z-10 absolute top-16 left-1/2 transform -translate-x-1/2 -translate-y-1/2;"
       />
       <MapGL
+        {...viewportWithTransition}
         ref={mapRef}
         mapStyle={themeMode === 'light' ? MAP_LIGHT_STYLE : MAP_DARK_STYLE}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onViewportChange={handleViewportChange}
         height="100%"
         width="100%"
+        onLoad={onMapLoad}
         onClick={onMapClick}
-        {...viewportWithTransition}
       >
         <Geocoder
           mapRef={mapRef}
