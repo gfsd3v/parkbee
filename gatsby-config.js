@@ -53,6 +53,5 @@ module.exports = {
         background_color: config.backgroundColor,
       },
     },
-    'gatsby-plugin-offline',
   ],
 }

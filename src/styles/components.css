@@ -49,11 +49,11 @@
     @apply p-0 my-4;
     min-height: unset;
   }
-  #toggle-test {
+  #toggle-theme {
     border: 0.125em solid theme('colors.[base-content]');
     background: theme('colors.[base-content]');
   }
-  #toggle-test > div {
+  #toggle-theme > div {
     background-color: theme('colors.[base-200]');
   }
   .Toastify__toast--info {
