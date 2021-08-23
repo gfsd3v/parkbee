@@ -27,11 +27,10 @@ const Switch = styled.div<ToggleProps>`
   transform: ${({ currentTheme }) => (currentTheme === 'light' ? 'translateX(0)' : 'translateX(2.5em)')};
   transition: inherit;
 `
-const Toggle: React.FC<ToggleProps> = ({ currentTheme, ...props }) => {
-  console.log(props)
+const Toggle: React.FC<ToggleProps> = ({ currentTheme, onClick, ...props }) => {
   return (
     <>
-      <ToggleContainer style={{ outline: 'none' }} id="toggle-theme" {...props}>
+      <ToggleContainer style={{ outline: 'none' }} id="toggle-theme" {...props} onClick={onClick}>
         <Switch currentTheme={currentTheme} />
       </ToggleContainer>
     </>

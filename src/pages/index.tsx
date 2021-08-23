@@ -53,23 +53,26 @@ const IndexPage = () => {
 
   const handleGarageSelect = React.useCallback((garage: IGarage) => dispatch(setActiveGarage(garage)), [activeGarage])
 
-  const handleParkingStart = React.useCallback((garage: IGarage) => {
-    const modalInfo = {
-      title: 'Start parking?',
-      description: `Please confirm that you want to start an parking action at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
-      mainButtonText: 'park',
-      onAccept: () => {
-        if (!activeParking) {
-          dispatch(startParkingTransaction(garage))
-          dispatch(closeModal())
-        } else {
-          toast.error(`You already have an active parking transaction.`)
-          dispatch(closeModal())
-        }
-      },
-    }
-    dispatch(showModal(modalInfo))
-  }, [])
+  const handleParkingStart = React.useCallback(
+    (garage: IGarage) => {
+      const modalInfo = {
+        title: 'Start parking?',
+        description: `Please confirm that you want to start an parking action at ${garage.name} - ${garage.streetAddress} for €${garage.basePrice}/hour.`,
+        mainButtonText: 'park',
+        onAccept: () => {
+          if (!activeParking) {
+            dispatch(startParkingTransaction(garage))
+            dispatch(closeModal())
+          } else {
+            toast.error(`You already have an active parking transaction.`)
+            dispatch(closeModal())
+          }
+        },
+      }
+      dispatch(showModal(modalInfo))
+    },
+    [activeParking]
+  )
 
   const handleParkingEnd = React.useCallback(() => {
     const modalInfo = {
@@ -83,7 +86,7 @@ const IndexPage = () => {
       },
     }
     dispatch(showModal(modalInfo))
-  }, [])
+  }, [activeParking])
 
   return (
     <Layout>

@@ -1,4 +1,5 @@
 module.exports = {
+  purge: false,
   plugins: [require('daisyui')],
   daisyui: {
     themes: [
