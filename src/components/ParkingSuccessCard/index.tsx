@@ -13,7 +13,7 @@ const ParkingSuccessCard: React.FC<{ parkingData: ILastParkingData; onClose: () 
   } = parkingData
 
   return (
-    <div className="container flex justify-center">
+    <div data-test="parking-success-card" className="container flex justify-center">
       <div className="card text-center bg-base-100 w-10/12 sm:w-8/12 lg:w-1/2 xl:w-2/6 shadow-2xl">
         <div className="flex justify-center px-10 pt-10">
           <SuccessIllustration className="w-60" />

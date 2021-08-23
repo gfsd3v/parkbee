@@ -23,17 +23,19 @@ const Layout = ({ children }: LayoutProps) => {
   const onToggle = React.useCallback(() => dispatch(toggleThemeMode()), [themeMode])
 
   return (
-    <div className="w-screen h-screen overflow-hidden">
-      <div className="absolute flex items-center right-0 z-10 top-0 left-0 m-5 lg:block lg:right-unset">
-        <ThemeToggle
-          onClick={onToggle}
-          data-set-theme={themeMode === 'light' ? 'dark' : 'light'}
-          currentTheme={themeMode}
-        />
+    <main>
+      <div className="w-screen h-screen overflow-hidden">
+        <div className="absolute flex items-center right-0 z-10 top-0 left-0 m-5 lg:block lg:right-unset">
+          <ThemeToggle
+            onClick={onToggle}
+            data-set-theme={themeMode === 'light' ? 'dark' : 'light'}
+            currentTheme={themeMode}
+          />
+        </div>
+        <Modal />
+        {children}
       </div>
-      <Modal />
-      {children}
-    </div>
+    </main>
   )
 }
 

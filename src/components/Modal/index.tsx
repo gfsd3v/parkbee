@@ -30,7 +30,11 @@ const Modal: React.FC = () => {
               <button className="btn min-w-max" onClick={() => dispatch(closeModal())}>
                 Cancel
               </button>
-              <button className={getBtnClass(modalState.modal.mainButtonColor)} onClick={handleClick}>
+              <button
+                data-test="modal-accept-btn"
+                className={getBtnClass(modalState.modal.mainButtonColor)}
+                onClick={handleClick}
+              >
                 {modalState.modal.mainButtonText || 'Ok'}
               </button>
             </div>

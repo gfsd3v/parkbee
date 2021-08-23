@@ -60,6 +60,7 @@ const GarageCard: React.FC<{
           </div>
           {activeParking ? (
             <button
+              data-test="end-parking-btn"
               className={`btn btn-error btn-wide justify-self-end ${loading && 'loading'}`}
               onClick={() => onEndParking()}
               {...stopParkingBtnHoverProps}
@@ -68,6 +69,7 @@ const GarageCard: React.FC<{
             </button>
           ) : (
             <button
+              data-test="start-parking-btn"
               className={`btn btn-primary btn-wide justify-self-end ${loading && 'loading'}`}
               onClick={() => onStartParking(garage)}
             >

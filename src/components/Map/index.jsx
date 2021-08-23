@@ -75,6 +75,7 @@ const Map = ({
   return (
     <>
       <div
+        data-test="search-input-container"
         ref={inputContainerRef}
         className="w-4/5 max-w-screen-md z-10 absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2;"
       />
