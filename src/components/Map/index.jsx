@@ -4,10 +4,15 @@
 import * as React from 'react'
 import MapGL, { FlyToInterpolator, Marker as DefaultMarker } from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
-import Marker from '@/components/Marker'
+import { useSelector } from 'react-redux'
+import { uiSelector } from '@/state/ui'
 import { easeExp } from 'd3-ease'
+import Marker from '@/components/Marker'
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2ZzZDN2IiwiYSI6ImNrc2pwb3o2OTJmdmUyd3JvZGtoemsyYWsifQ.K_7NGnqAc-4XdiDK3fd7ow'
+
+const MAP_LIGHT_STYLE = 'mapbox://styles/gfsd3v/cksjqckdq42ts17pegmmw5mzk'
+const MAP_DARK_STYLE = 'mapbox://styles/gfsd3v/cksnk9ull5f6x17o3b5hfzu1e'
 
 /*
   Here we need to treat the viewport that comes from the redux store
@@ -27,6 +32,7 @@ const Map = ({
   onTransitionEnd,
   onMapClick,
 }) => {
+  const { themeMode } = useSelector(uiSelector)
   const mapRef = React.useRef()
   const inputContainerRef = React.useRef()
   const viewportWithTransition = {
@@ -71,7 +77,7 @@ const Map = ({
       />
       <MapGL
         ref={mapRef}
-        mapStyle="mapbox://styles/gfsd3v/cksjqckdq42ts17pegmmw5mzk"
+        mapStyle={themeMode === 'light' ? MAP_LIGHT_STYLE : MAP_DARK_STYLE}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onViewportChange={handleViewportChange}
         height="100%"

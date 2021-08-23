@@ -29,8 +29,9 @@ export const startParkingTransaction = createAsyncThunk(
   async (garage: IGarage, { dispatch }) => {
     try {
       const payload = { garageId: garage.garageId, doorId: garage.doors[0].doorId }
+      const currentDate = dayjs()
       const transactionId: string = await ParkingService.startParkingTransaction(payload)
-      dispatch(setActiveParking({ garageId: garage.garageId, transactionId: transactionId, startetedAt: dayjs() }))
+      dispatch(setActiveParking({ garageId: garage.garageId, transactionId: transactionId, startetedAt: currentDate }))
     } catch (e) {
       console.error(e)
       throw e

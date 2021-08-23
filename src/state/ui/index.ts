@@ -33,7 +33,7 @@ export default uiSlice.reducer
 export const uiSelector = (state: RootState) => state.ui
 
 // Actions
-const { setThemeMode } = uiSlice.actions
+export const { setThemeMode } = uiSlice.actions
 
 // Thunks
 export const toggleThemeMode = (): Thunk => (dispatch: Dispatch) => {

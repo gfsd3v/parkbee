@@ -3,12 +3,51 @@
     @apply m-0 w-full max-w-full;
   }
 
-  .Toastify__toast-container {
-    z-index: 20;
-  }
-
   .card-actions {
     align-items: flex-end;
+  }
+
+  .customized-marker {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 9px 10px 7px 10px;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.35);
+    background: theme('colors.secondary');
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .modal-action {
+    @apply justify-center;
+  }
+  .customized-marker::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 7.5px;
+    height: 7.5px;
+    margin-top: -4px;
+    background: theme('colors.secondary');
+    transform: rotate(45deg);
+  }
+
+  .customized-marker.active-parking,
+  .customized-marker.active-parking::after {
+    background: theme('colors.success');
+  }
+
+  .customized-marker.active,
+  .customized-marker.active::after {
+    background: theme('colors.primary');
   }
 
   .collapse-title,
@@ -17,19 +56,12 @@
     min-height: unset;
   }
 
-  .marker-after-polygon {
-    border-color: transparent;
-    border-top-color: #2c3b4f;
-    border-width: 12px;
-    margin-left: -11.6px;
-    margin-bottom: -1.275rem;
+  #toggle-test {
+    border: 0.125em solid theme('colors.[base-200]');
+    background: theme('colors.[base-content]');
   }
 
-  .marker-after-polygon.active {
-    border-top-color: #f06aa9;
-  }
-
-  .marker-after-polygon.active-parking {
-    border-top-color: #8261f0;
+  #toggle-test > div {
+    background-color: theme('colors.[base-200]');
   }
 }

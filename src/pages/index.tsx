@@ -5,14 +5,14 @@ import { toast } from 'react-toastify'
 // Find alternative for react-map-gl-geocoder with TS support
 // eslint-disable-next-line
 import Map from '@/components/Map'
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
-import GarageCard from '@/components/GarageCard'
 import { mapSelector, setViewport } from '@/state/map'
 import { garagesSelector, getAvailableGarages, setActiveGarage } from '@/state/garages'
 import { startParkingTransaction, endParkingTransaction, resetRequestsStatus, parkingSelector } from '@/state/parking'
 import { showModal, closeModal } from '@/state/modal'
 import { IGarage } from '@/services/garageMockService/interfaces'
+import Layout from '@/components/Layout'
+import Seo from '@/components/Seo'
+import GarageCard from '@/components/GarageCard'
 
 const IndexPage = () => {
   const dispatch = useDispatch()
@@ -86,6 +86,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Parkbee" />
+
       {mapState.viewport && garagesState.availables.length && (
         <Map
           onGarageSelect={handleGarageSelect}

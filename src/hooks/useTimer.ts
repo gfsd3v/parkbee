@@ -20,7 +20,8 @@ const useTimer = (initialState = 0) => {
     }
   }, [timerOn])
 
-  const handleStart = () => {
+  const handleStart = (starterTime?: number) => {
+    starterTime && setTimer(starterTime)
     setTimerOn(true)
   }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import ColoredBadge from '@/components/ColoredBadge'
-import { themeChange } from 'theme-change'
 import CollapsableDoorsList from '@/components/CollapsableDoorsList'
 import MarkerIcon from '@/icons/marker.svg'
 import { IGarage } from '@/services/garageMockService/interfaces'
@@ -24,18 +23,15 @@ const GarageCard: React.FC<{
   onEndParking: () => void
   loading: boolean
 }> = ({ garage, activeParking, onStartParking, loading, onEndParking }) => {
+  const startedAt = React.useMemo(() => {
+    return activeParking ? Math.abs(dayjs(activeParking.startetedAt).diff(dayjs(), 'second')) : 0
+  }, [activeParking, garage])
   const [stopParkingBtnHover, stopParkingBtnHoverProps] = useHover()
-  const { timer, handleStart, resetTimer } = useTimer(
-    activeParking ? Math.abs(dayjs(activeParking.startetedAt).diff(dayjs(), 'second')) : 0
-  )
+  const { timer, handleStart, resetTimer } = useTimer(startedAt)
   const { garageName, capacity, availableSpaces, basePrice, streetAddress, doors, photos } = garage
 
   React.useEffect(() => {
-    themeChange(false)
-  }, [])
-
-  React.useEffect(() => {
-    activeParking && handleStart()
+    activeParking && handleStart(startedAt)
     !activeParking && resetTimer()
   }, [activeParking])
 
@@ -93,9 +89,6 @@ const GarageCard: React.FC<{
               Start parking
             </button>
           )}
-          {/* <button data-set-theme="dark" className={`btn btn-primary`} onClick={() => themeChange('dark')}> */}
-          {/*   change theme */}
-          {/* </button> */}
         </div>
       </div>
     </div>

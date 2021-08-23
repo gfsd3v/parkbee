@@ -383,7 +383,7 @@ export const Garages = [
     capacity: 21,
     basePrice: 11,
     dailyCap: 83,
-    latitude: 52.365118,
+    latitude: 52.323118,
     longitude: 4.906493,
     streetAddress: 'Librijesteeg, 3011NH, Amsterdam, NL',
     postalCode: '3011NH',
