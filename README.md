@@ -12,8 +12,8 @@ I would like to refeer you guys to [this](https://coding-guide-pattern.netlify.a
 - Utility-first styling with `Tailwind`
 - SEO component to improve SEO with `React Helmet`
 
-Since I decided to use a utility-first styling with Tailwind and DaisyUI it wasn't necessary to create basic components like buttons, cards, inputs, etc. But the UI components for this challenge only have a dependency with tailwind. 
-Tailwind is themable, so consuming these components in other projects wouldn't be hard, I would use for this Bit.dev, I recently made a refactor on our internal UI library using Tailwind with Styled Components and Bit.dev, it's still a WIP, but the feedbacks have been good this far, its an awesome stack to work with.
+Since I decided to use a utility-first styling with Tailwind and DaisyUI it wasn't necessary to create basic components like buttons, cards, inputs, etc. But the UI components for this challenge only have a dependency with tailwind. Tailwind is themable, so consuming these components in other projects wouldn't be hard, to achieve this I would probably use Bit.dev, I recently made a refactor on our internal UI library using Tailwind with Styled Components and Bit.dev, it's still a WIP, but the feedbacks have been good this far, its an awesome stack to work with.
+
 I've mocked all the data that is displayed on the product, I didn't simulate any HTTP request, I used class servicer as I usually do but I decided to just return a Promise and resolve it with the mocked data. I explain a bit more in the technical.md. Basically all the platform logic is located at the `pages/index.tsx` and the stores from reduxtoolkit, we also have some more complex components like `src/components/GarageCard` and `src/components/Map`, the only dependency that they have are Tailwind and type definitions, I've used reduxtoolkit `createAsyncThunk` to manage the requests alongside the store/state of redux, all data from the application is properly separated at the redux store.
 
 I've assumed that the `Garage` interface that we receive is as follow:
@@ -62,7 +62,7 @@ Saddly its a little but off from a real world situation.
 
 > Project requires `node` >= 12.13.0 and uses `npm` as the package manager
 
-1. **Create a Gatsby site**
+1. **Get the code**
 
    Clone or download this repository:
 
