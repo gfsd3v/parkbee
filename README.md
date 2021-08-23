@@ -1,5 +1,7 @@
 ## ParkBee - GFS
 
+[Challenge in production enviroment](https://gfs-parkbee.netlify.app/)
+
 I would like to refeer you guys to [this](https://coding-guide-pattern.netlify.app/) documentation about project structure/coding guidelines that I wrote a while ago, I always try to follow these guidelines, it varies accordingly with the stack, but I always try to use it as reference and it will definitely help you guys understand my train of thought.
 
 ## Stack
