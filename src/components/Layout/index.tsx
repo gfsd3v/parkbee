@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="w-screen h-screen overflow-hidden">
-      <div className="z-10 top-44 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute flex items-center right-0 z-10 top-0 left-0 m-5 lg:block lg:right-unset">
         <ThemeToggle
           onClick={onToggle}
           data-set-theme={themeMode === 'light' ? 'dark' : 'light'}

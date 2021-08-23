@@ -1,13 +1,4 @@
 module.exports = {
-  purge: {
-    important: 'html',
-    content: [
-      './src/**/*.{js,jsx,ts,tsx}',
-      './node_modules/react-map-gl-geocoder/dist/mapbox-gl-geocoder.css',
-      './node_modules/mapbox-gl/dist/mapbox-gl.css',
-    ],
-    safelist: ['mapboxgl-ctrl-geocoder', 'mapbox-gl', 'mapboxgl-ctrl'],
-  },
   plugins: [require('daisyui')],
   daisyui: {
     themes: [

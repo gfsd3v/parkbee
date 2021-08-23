@@ -50,7 +50,7 @@ const Map = ({
     viewportChange(newViewportWithoutTransition)
   }, [])
 
-  const renderMarkers = React.useCallback(() => {
+  const renderMarkers = () => {
     return garages.map((garage, index) => (
       <DefaultMarker
         offsetLeft={-36 / 2}
@@ -70,13 +70,13 @@ const Map = ({
         </Marker>
       </DefaultMarker>
     ))
-  }, [garages, activeGarage])
+  }
 
   return (
     <>
       <div
         ref={inputContainerRef}
-        className="w-4/5 max-w-screen-md z-10 absolute top-16 left-1/2 transform -translate-x-1/2 -translate-y-1/2;"
+        className="w-4/5 max-w-screen-md z-10 absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2;"
       />
       <MapGL
         {...viewportWithTransition}

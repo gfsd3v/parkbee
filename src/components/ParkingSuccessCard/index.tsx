@@ -20,7 +20,7 @@ const ParkingSuccessCard: React.FC<{ parkingData: ILastParkingData; onClose: () 
         </div>
         <div className="card-body space-y-6">
           <h2 className="card-title">Parking ended successfully</h2>
-          <p>Thank you for usign ParkBee, here its an overview about your parking :)</p>
+          <p>Thank you for using ParkBee, here is an overview of your parking :)</p>
           <div className="flex flex-1 flex-col items-center justify-center">
             <div className="flex items-center mb-2">
               <MarkerIcon className="w-6 h-6 mr-1" />
