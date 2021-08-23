@@ -71,7 +71,7 @@ export interface IGarage {
   photos: IGaragePhoto[]
 }
 ```
-Saddly its a little but off from a real world situation.
+Saddly its a little bit off from a real world situation.
 
 ## Setup
 
