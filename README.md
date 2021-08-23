@@ -1,5 +1,7 @@
 ## ParkBee - GFS
 
+I would like to refeer you guys to [this](https://coding-guide-pattern.netlify.app/) documentation about project structure/coding guidelines that I wrote a while ago, I always try to follow these guidelines, it varies accordingly with the stack, but I always try to use it as reference and it will definitely help you guys understand my train of thought.
+
 ## Stack
 - Based on `Gatsby@3`
 - Mapbox
@@ -9,8 +11,6 @@
 - Toggable theme
 - Utility-first styling with `Tailwind`
 - SEO component to improve SEO with `React Helmet`
-
-I would like to refeer you guys to [this](https://coding-guide-pattern.netlify.app/) documentation about project structure/coding guidelines that I wrote a while ago, I always try to follow these guidelines, it varies accordingly with the stack, but I always try to use it as reference and it will definitely help you guys understand my train of thought.
 
 Since I decided to use a utility-first styling with Tailwind and DaisyUI it wasn't necessary to create basic components like buttons, cards, inputs, etc. But the UI components for this challenge only have a dependency with tailwind. 
 Tailwind is themable, so consuming these components in other projects wouldn't be hard, I would use for this Bit.dev, I recently made a refactor on our internal UI library using Tailwind with Styled Components and Bit.dev, it's still a WIP, but the feedbacks have been good this far, its an awesome stack to work with.
