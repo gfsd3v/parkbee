@@ -16,7 +16,7 @@ const Marker: React.FC<{
         className={`${active ? 'active' : ''} 
         ${
           activeParking ? 'active-parking' : ''
-        } customized-marker text-white duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110`}
+        } outline-none customized-marker text-white duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110`}
         tabIndex={index}
       >
         {children}
